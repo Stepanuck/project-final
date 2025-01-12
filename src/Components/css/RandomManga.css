@@ -1,0 +1,70 @@
+.mangaMain {
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    gap: 1rem;
+    padding-inline: 10%;
+    box-shadow: 0 2px 5px rgba(2, 3, 5, 20);
+    position: relative;
+  }
+  
+  .mangaMain img{
+    width: auto;
+    height: 100%;
+    border-radius: 16px;
+    padding: .5rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  .mangaMain .content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+  }
+  
+  .content h2{
+    font-size: 2rem;
+  }
+  .content p{
+    font-size: 1.25rem;
+    opacity: .5;
+    
+  }
+  
+
+  .button-random{
+    position: absolute;
+    display: flex;
+    text-align: center;
+    bottom: 24px;
+    right: 24px;
+    background-color: yellowgreen;
+    color:black;
+    padding: 1rem;
+    width: 150px;
+    padding-inline: 1rem;
+    border-radius: 100px;
+    cursor: pointer;
+  }
+
+  .button-random:hover{
+    background-color: color-mix(in srgb, yellowgreen , #000 20%);
+  }
+  .spin{
+    width: 32px;
+    height: 32px;
+    display: flex;
+    border-radius: 100px;
+    border: 10px dotted #222;
+    align-items: center;
+    background-color: transparent;
+    animation: spin 2s linear infinite;
+}
+@keyframes spin{
+    0%{transform: rotate(0deg);}
+    100%{transform: rotate(360deg);}
+}

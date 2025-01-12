@@ -1,0 +1,40 @@
+/* Estilo base para el contenedor de categorías */
+.list-categories {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Distribuye los elementos en columnas */
+    gap: 1rem;  /* Espacio entre los elementos */
+    padding: 1rem;
+    justify-items: center; /* Centra el contenido dentro de cada celda */
+    align-items: center; /* Alinea el contenido verticalmente */
+    background-color: #f8f9fa; /* Fondo claro para el contenedor */
+}
+
+/* Estilo para cada categoría */
+.categories {
+    width: 100%;
+    height: 150px; /* Alto fijo para cada celda */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px; /* Bordes redondeados */
+    background-color: #ffffff; /* Fondo blanco para cada categoría */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Estilo cuando se pasa el mouse sobre una categoría */
+.categories:hover {
+    transform: scale(1.05); /* Escala el elemento ligeramente */
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
+    cursor: pointer; /* Cambia el cursor */
+}
+
+/* Estilo para el texto dentro de cada categoría */
+.categories p {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333; /* Color de texto oscuro */
+    text-align: center;
+    margin: 0;
+}
