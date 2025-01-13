@@ -1,40 +1,48 @@
-/* Estilo base para el contenedor de categorías */
-.list-categories {
-    width: 100%;
+.categories-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Distribuye los elementos en columnas */
-    gap: 1rem;  /* Espacio entre los elementos */
-    padding: 1rem;
-    justify-items: center; /* Centra el contenido dentro de cada celda */
-    align-items: center; /* Alinea el contenido verticalmente */
-    background-color: #f8f9fa; /* Fondo claro para el contenedor */
-}
-
-/* Estilo para cada categoría */
-.categories {
+    grid-template-columns: 1fr 3fr; 
     width: 100%;
-    height: 150px; /* Alto fijo para cada celda */
+  }
+  
+  .categories-list {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 8px; /* Bordes redondeados */
-    background-color: #ffffff; /* Fondo blanco para cada categoría */
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-/* Estilo cuando se pasa el mouse sobre una categoría */
-.categories:hover {
-    transform: scale(1.05); /* Escala el elemento ligeramente */
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
-    cursor: pointer; /* Cambia el cursor */
-}
-
-/* Estilo para el texto dentro de cada categoría */
-.categories p {
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: #333; /* Color de texto oscuro */
+    flex-direction: column;
+    gap: 10px;
+    overflow-y: auto;
+    max-height: 80vh; 
+  }
+  
+  .category-item {
+    padding: 10px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .category-item.selected {
+    background-color: #f0f0f0;
+  }
+  
+  .mangas-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    overflow-y: auto;
+    max-height: 60vh; 
+  }
+  
+  .manga-panel {
+    width: 200px;
     text-align: center;
-    margin: 0;
+  }
+  
+  .manga-panel img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+  }
+.list-manga-category{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 100%;
 }

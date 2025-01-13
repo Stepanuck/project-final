@@ -23,11 +23,14 @@ export function ListPopularManga() {
   }, []);
 
   if (loading) {
-    return <p>Loading popular mangas...</p>;
+    return <p>Cargando Manga Populares</p>;
   }
 
   return (
     <section className="list-manga">
+      <div className="popular-tittle">
+      <h2>Mangas Populares</h2>
+      </div>
       {popularMangas.length > 0 ? (
         popularMangas.map((manga) => (
           <Link key={manga.mal_id} className="manga-panel" to={`/manga/${manga.mal_id}`}>
@@ -36,7 +39,7 @@ export function ListPopularManga() {
           </Link>
         ))
       ) : (
-        <p>No popular mangas found.</p>
+        <p>No se encontraron mangas populares</p>
       )}
     </section>
   );
