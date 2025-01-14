@@ -19,7 +19,7 @@ export function Manga() {
                 const data = await response.json();
                 setManga(data.data);
             } catch (error) {
-                console.error("Error fetching manga:", error);
+                console.error(error);
             } finally {
                 setLoadingManga(false);
             }
@@ -31,7 +31,7 @@ export function Manga() {
                 const data = await response.json();
                 setRecommend(data.data || []);
             } catch (error) {
-                console.error("Error fetching recommendations:", error);
+                console.error(error);
             } finally {
                 setLoadingRecommendations(false);
             }
@@ -85,6 +85,7 @@ export function Manga() {
                         ))}
                     </div>
                 )}
+
                 {loadingRecommendations && (
                     <div className="recommendations-placeholder">
                         {[...Array(5)].map((_, index) => (
@@ -97,12 +98,18 @@ export function Manga() {
                 )}
             </div>
 
-            {!loadingManga && !manga && !loadingRecommendations && !recommend.length && (
+            {!loadingManga && !manga && (
                 <div className="manga-not-found">
                     <p>Manga no econtrado</p>
-                    <p>Mangas recomendados no encontrado</p>
                 </div>
             )}
+            {!recommend.length && !loadingRecommendations &&(
+                <div className="manga-not-found">   
+                <p>Mangas recomendados no encontrado</p>
+                </div>
+            )
+
+            }
         </div>
     );
 }

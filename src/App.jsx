@@ -6,6 +6,7 @@ import { Manga } from './Components/Manga';
 import { Categories } from './Components/Categories';
 import { ListManga } from './Components/ListManga';
 import { SearchManga } from './Components/SearchManga';
+import { Footer } from './Components/Footer';
 
 import './reset.css';
 
@@ -26,21 +27,24 @@ export default function App() {
         console.error("Error: ", error);
       }
     };
-    fetchManga();
+    if (search) {
+      fetchManga();
+    }
   }, [search]);
 
+  
+  
   return (
     <>
-      <Header search={search} changeSearch={changeSearch} />
+      <Header changeSearch={changeSearch} />
       <Routes>
-        <Route path="/" element={<Main search={search} />} />
+        <Route path="/" element={<Main search={search} setSearch={setSearch} />} />
         <Route path="/manga/:id" element={<Manga />} />
         <Route path="/search" element={<SearchManga search={search} />} />
         <Route path="/categories" element={<Categories />} />
         <Route path="/categories/:categoryId" element={<ListManga />} />
       </Routes>
+      <Footer />
     </>
   );
 }
-
-

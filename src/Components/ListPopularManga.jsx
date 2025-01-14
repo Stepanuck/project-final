@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './css/ListManga.css';
+import './css/listMangaSearch.css'
 
 export function ListPopularManga() {
   const [popularMangas, setPopularMangas] = useState([]);
@@ -28,19 +29,19 @@ export function ListPopularManga() {
 
   return (
     <section className="list-manga">
-      <div className="popular-tittle">
       <h2>Mangas Populares</h2>
-      </div>
+      <div className="manga-grid">
       {popularMangas.length > 0 ? (
         popularMangas.map((manga) => (
           <Link key={manga.mal_id} className="manga-panel" to={`/manga/${manga.mal_id}`}>
             <img src={manga.images?.jpg?.image_url} alt={manga.title} />
-            <h2>{manga.title}</h2>
+            <p>{manga.title}</p>
           </Link>
         ))
       ) : (
         <p>No se encontraron mangas populares</p>
       )}
+      </div>
     </section>
   );
 }

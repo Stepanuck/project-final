@@ -1,30 +1,37 @@
 
 .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem;
-    background-color:#776871;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    padding-inline: 10%;
-    width: 100%;
- 
+  width: 100%;
+  height: 80px;
+  background-color: #333;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding-inline: 4%;
   }
   
   .Search {
     display: flex;
     padding: 5px 10px;
-    border: 1px solid #ddd;
     border-radius: 4px;
     gap: .75rem;
   }
   .Search input{
-    display: flex;
+    background-color: #444;
+    color: #fff;
+    width: 100%;
+    max-width: 400px;
+    height: 50px;
     border-radius: 16px;
+    padding: 0 1rem;
+    border: none;
+  }
+  .Search input:focus{
+    outline: 3px solid #333;
   }
 
   .button{
-    height: 40px;
+    height: 50px;
     width: 100px;
     text-align: center;
     background-color: #09f;
@@ -33,10 +40,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 0.7rem;
     gap: 0.5rem;
     border-radius: 16px;
-    transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;;
 }
 
 .button:hover{

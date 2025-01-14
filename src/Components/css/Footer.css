@@ -1,0 +1,56 @@
+:root{
+    --primary: linear-gradient(166deg, rgba(90, 32, 205, 1) 0%, rgba(26, 121, 115, 1) 100%);
+    --skinColor: #E6CCBE;
+    --hunterGreen:#3C5233;
+    --lapizAzuli: #456990;
+    --tyrianPurple:#4C1036;
+    --color-default: #1F0322;
+    
+    --text-0: .9rem;
+    --text-1: 1rem;
+    --text-2: 2rem;
+    --padding-0: 0;
+    --padding-025:.25rem;
+    --padding-05:.5rem;
+    --padding-1: 1rem;
+    --padding-1-3: 1.3rem;
+    --padding-2: 2rem;
+  }
+
+.contact-footer{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: var(--padding-2);
+}
+.box-contact{
+    border: 2px solid #222;
+    border-radius: 100%;
+    padding: var(--padding-05);
+    transition: all  0.5s ease;
+}
+
+.link-contact-mail, .link-contact-instagram,  .link-contact-twitter{color:var(--color-default)}
+.twitter:hover{background-color: white;}
+.instagram:hover, .link-contact-instagram:hover{
+    background: linear-gradient(45deg, #405de6,  #5851db,  #833ab4, #c13584,#e1306c, #fd1d1d);
+    color: white;
+}
+.link-contact-mail:hover, .mail:hover{
+    background-color: #1e3fda;
+    color: white;
+}
+.box-contact:hover{
+    transform: skewX(25deg);
+}
+.footer-tomas{
+    display: flex;
+    justify-content: center;
+    margin-top: var(--padding-1-3);
+}
+.p-footer{
+    font-size: var(--text-0);
+    opacity: 0.75;
+    transition: all  0.5s ease;
+    padding-bottom: var(--padding-05);
+}

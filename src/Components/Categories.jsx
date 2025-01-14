@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import './css/Categories.css';
 
 export function Categories() {
@@ -19,7 +19,7 @@ export function Categories() {
             return data.data.find(a => a.mal_id === id)
           });
         setCategories(uniqueCategories || []);
-        // Establecer la categoría de acción como seleccionada por defecto
+        
         const actionCategory = uniqueCategories.find(category => category.name.toLowerCase() === 'action');
         if (actionCategory) {
           setSelectedCategory(actionCategory.mal_id);
@@ -49,7 +49,7 @@ export function Categories() {
   return (
     <div className="categories-container">
       <div className="categories-list">
-        {categories.slice(0, 15).map((category) => (
+        {categories.slice(0, 14).map((category) => (
           <div
             key={category.mal_id}
             className={`category-item ${selectedCategory === category.mal_id ? 'selected' : ''}`}
@@ -61,11 +61,11 @@ export function Categories() {
       </div>
       <div className="list-manga-category">
         {mangas.length > 0 ? (
-          mangas.slice(0, 12).map((manga) => (
-            <div key={manga.mal_id} className="manga-panel">
+          mangas.slice(0, 15).map((manga) => (
+            <Link key={manga.mal_id} to={`/manga/${manga.mal_id}`} className="manga-panel">
               <img src={manga.images?.jpg?.image_url} alt={manga.title} />
-              <h3>{manga.title}</h3>
-            </div>
+               <h3>{manga.title}</h3>
+             </Link>
           ))
         ) : (
           <p>No se encontraron mangas para esta categoría.</p>
